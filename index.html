@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ST JOHN'S HIGH SCHOOL</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+.facilities-section{
+padding:60px 20px;
+background:#f1f5f9;
+text-align:center;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.facilities-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.facility-box{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.facility-box:hover{
+transform:translateY(-8px);
+}
+
+.facility-box img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.facility-box h3{
+margin:15px 0 5px;
+}
+
+.facility-box p{
+padding:0 15px 20px;
+color:#555;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+.facility-container{
+display:flex;
+flex-direction:column;
+gap:30px;
+margin-top:40px;
+}
+
+.facility-card{
+display:flex;
+align-items:center;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.facility-card:hover{
+transform:scale(1.02);
+box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.facility-card img{
+width:320px;
+height:200px;
+object-fit:cover;
+}
+
+.facility-text{
+padding:25px;
+}
+
+.facility-text h3{
+margin-bottom:10px;
+font-size:22px;
+}
+
+.facility-text p{
+color:#555;
+}
+body{
+font-family:Poppins;
+background:linear-gradient(120deg,#f6f9fc,#eef2ff);
+}
+.teachers-section{
+padding:70px 20px;
+background:linear-gradient(135deg,#6366f1,#9333ea,#ec4899);
+color:white;
+text-align:center;
+}
+
+.teacher-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.teacher-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
+
+.teacher-card{
+background:white;
+color:#111;
+width:250px;
+border-radius:15px;
+padding:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.teacher-card:hover{
+transform:translateY(-10px) scale(1.05);
+}
+
+.teacher-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.teacher-card h3{
+margin:10px 0 5px;
+}
+
+.teacher-card span{
+font-size:14px;
+color:#666;
+}
+.gallery-section{
+padding:70px 20px;
+background:#f8fafc;
+text-align:center;
+}
+
+.gallery-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
+.gallery-slider{
+overflow:hidden;
+position:relative;
+}
+
+.gallery-track{
+display:flex;
+width:calc(250px * 12);
+animation:scroll 25s linear infinite;
+}
+
+.gallery-track img{
+width:250px;
+height:180px;
+object-fit:cover;
+margin-right:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes scroll{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-50%);
+}
+}
+
+/* TOPBAR */
+
+.topbar{
+display:flex;
+align-items:center;
+background:linear-gradient(90deg,#ff512f,#dd2476,#7f00ff);
+color:white;
+padding:15px 20px;
+}
+
+.menu{
+font-size:28px;
+cursor:pointer;
+margin-right:15px;
+}
+
+.school-name{
+font-size:22px;
+font-weight:600;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:-260px;
+top:0;
+width:260px;
+height:100%;
+background:#1e293b;
+padding-top:30px;
+transition:.4s;
+}
+
+.sidebar a{
+display:block;
+padding:15px 25px;
+color:white;
+text-decoration:none;
+}
+
+.sidebar a:hover{
+background:#2563eb;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("https://images.unsplash.com/photo-1588072432836-e10032774350") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.btn{
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+margin:10px;
+}
+
+.apply{
+background:#ff512f;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+/* SECTION */
+
+.section{
+padding:60px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+width:240px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+margin-top:30px;
+}
+
+.gallery img{
+width:280px;
+border-radius:12px;
+}
+
+/* FORM */
+
+form{
+max-width:400px;
+margin:auto;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+padding:12px;
+background:#2563eb;
+border:none;
+color:white;
+width:100%;
+border-radius:8px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar" id="sidebar">
+
+<a href="#facilities" onclick="closeMenu()">Facilities</a>
+<a href="#faculty" onclick="closeMenu()">Faculty</a>
+<a href="#gallery" onclick="closeMenu()">Gallery</a>
+<a href="#admission" onclick="closeMenu()">Admission</a>
+
+</div>
+
+<div class="topbar">
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="school-name">ST JOHN'S HIGH SCHOOL</div>
+
+</div>
+
+
+<section class="hero">
+
+<h1>Admissions Open 2026</h1>
+
+<a href="#admission" class="btn apply">Apply Now</a>
+
+<a href="https://wa.me/919876543210" class="btn whatsapp">WhatsApp</a>
+
+</section>
+<!-- ===== School Gallery ===== -->
+
+<section class="gallery-section" id="gallery">
+
+<h2 class="gallery-title">School Gallery</h2>
+
+<div class="gallery-slider">
+
+<div class="gallery-track">
+
+<img src="images/school1.jpg">
+<img src="images/school2.jpg">
+<img src="images/school3.jpg">
+<img src="images/school4.jpg">
+<img src="images/school5.jpg">
+<img src="images/school6.jpg">
+
+<!-- duplicate images for smooth infinite slide -->
+
+<img src="images/school1.jpg">
+.jpg">
+<img src="images/school2.jpg">
+<img src="images/school3.jpg">
+<img src="images/school4.jpg">
+<img src="images/school5.jpg">
+<img src="images/school6.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===== School Facilities Section ===== -->
+
+<section id="facilities" class="facilities-section">
+
+<h2 class="section-title">World Class Facilities</h2>
+
+<div class="facilities-grid">
+
+<div class="facility-box">
+<img src="images/library.jpg">
+<h3>Modern Library</h3>
+<p>Thousands of books and digital learning resources for students.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/hostel.jpg">
+<h3>Hostel Facility</h3>
+<p>Separate hostel for boys and girls with safe environment.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/lab.jpg">
+<h3>Science Laboratories</h3>
+<p>Fully equipped Physics, Chemistry and Biology labs.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/computer.jpg">
+<h3>Computer Lab</h3>
+<p>Modern computers with high speed internet.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/playground.jpg">
+<h3>Big Playground</h3>
+<p>Large sports ground for cricket, football and athletics.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/bus.jpg">
+<h3>School Transport</h3>
+<p>Safe and reliable bus service for students.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/activity.jpg">
+<h3>Activity Rooms</h3>
+<p>Music, dance, art and cultural activities.</p>
+</div>
+
+<div class="facility-box">
+<img src="images/medical.jpg">
+<h3>Medical Room</h3>
+<p>First aid and medical care available in school.</p>
+</div>
+<!-- ===== Teachers Section ===== -->
+
+<section id="teachers" class="teachers-section">
+
+<h2 class="teacher-title">Meet Our Expert Teachers</h2>
+
+<div class="teacher-container">
+
+<div class="teacher-card">
+<img src="images/teacher1.jpg">
+<h3>Rajesh Kumar</h3>
+<p>Mathematics Teacher</p>
+<span>10+ Years Experience</span>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher2.jpg">
+<h3>Anita Sharma</h3>
+<p>English Teacher</p>
+<span>8+ Years Experience</span>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher3.jpg">
+<h3>Amit Singh</h3>
+<p>Science Teacher</p>
+<span>12+ Years Experience</span>
+</div>
+
+<div class="teacher-card">
+<img src="images/teacher4.jpg">
+<h3>Neha Verma</h3>
+<p>Computer Teacher</p>
+<span>6+ Years Experience</span>
+</div>
+
+</div>
+
+</section>
+</div>
+
+</section>
+
+<footer>
+
+© Future Star School
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+let sidebar=document.getElementById("sidebar")
+
+if(sidebar.style.left=="0px"){
+sidebar.style.left="-260px"
+}else{
+sidebar.style.left="0px"
+}
+
+}
+
+function closeMenu(){
+document.getElementById("sidebar").style.left="-260px"
+}
+
+</script>
+
+</body>
+</html>
